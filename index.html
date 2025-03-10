@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Blog Personal de Luis</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Encabezado con navegación -->
+    <header>
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+        
+        <h1>COMIL6</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" aria-current="page">Inicio</a></li>
+                <li><a href="gallery.html">Galería</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+                <li><a href="video.html">Video</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección principal -->
+    <main>
+        <!-- Introducción -->
+        <section aria-labelledby="introduccion">
+            <h2 id="introduccion">Introducción</h2>
+            <p>
+                PAGINA DE PRUEBA DE ENTORNO DE TOUR VIRTUAL PARA LA PAGINA DEL COMIL
+            </p>
+
+        <!-- Contenedor para el iframe que contiene el tour virtual -->
+        <div class="iframe-container">
+            <!-- Iframe para mostrar el tour virtual -->
+            <iframe 
+                id="tourIframe" 
+                src="tour/index.htm" 
+                width="100%" 
+                height="600px"  
+                style="border: none; display: block; overflow: hidden;" 
+                title="Tour Virtual">
+            </iframe>
+        </div>
+
+        
+        <script>
+            // Ajusta la altura del aiframe dinámicamente
+            // Busca el elemento iframe en el documento usando su ID y lo almacena en la variable "iframe".
+            const iframe = document.getElementById('tourIframe');
+        
+            // Establece la altura inicial del iframe al tamaño completo de la ventana del navegador.
+            iframe.style.height = `${window.innerHeight}px`;
+        
+            // Agrega un evento al objeto "window" para detectar cuando la ventana cambia de tamaño.
+            window.addEventListener('resize', () => {
+                // Cuando la ventana se redimensiona, actualiza la altura del iframe
+                // para que coincida con la nueva altura de la ventana.
+                iframe.style.height = `${window.innerHeight}px`;
+            });
+        </script>
+        
+        
+
+
+
+            <!-- Objeto 3D con model-viewer -->
+            <model-viewer 
+                src="3D\16_11_2022.glb" 
+                alt="Visualización interactiva de un modelo 3D" 
+                auto-rotate 
+                camera-controls 
+                style="width: 100%; max-width: 600px; height: 400px; margin: 20px auto; display: block;">
+            </model-viewer>
+        </section>
+    
+
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025  Todos los derechos reservados.</p>
+        <nav aria-label="Enlaces del pie de página">
+            <ul>
+                <li><a href="politicasPrivacidad.html">Política de privacidad</a></li>
+                <li><a href="terminos.html">Términos y condiciones</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+</html>
